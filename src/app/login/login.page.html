@@ -1,0 +1,45 @@
+<ion-header>
+  <figure class="ion-text-center ion-padding">
+    <img src="assets\img\logo.png" alt="">
+  </figure>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="loginFrom"
+  (ngSubmit)="loginUser(loginFrom.value)">
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+    <div class="ValErr">
+    <ng-container *ngFor="let val of validationMessage.email">
+      <div *ngIf="loginFrom.get('email').hasError(val.type) &&
+      (loginFrom.get('email').dirty || 
+      loginFrom.get('email').touched)">
+        {{ val.message }}
+      </div>
+    </ng-container>
+    </div>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="Password" formControlName="pass"></ion-input>
+    </ion-item>
+    <div class="ValErr">
+    <ng-container *ngFor="let val of validationMessage.password">
+      <div *ngIf="loginFrom.get('pass').hasError(val.type) &&
+      (loginFrom.get('pass').dirty || 
+      loginFrom.get('pass').touched)">
+        {{ val.message }}
+      </div>
+    </ng-container>
+    {{ errorMessage }}
+    <ion-button expand="full" shape="round" color="success"
+      [disabled]="!loginFrom.valid"
+      type="submit"
+    >
+      Send</ion-button>
+    </div>
+  </form>
+</ion-content>
+<ion-footer>
+</ion-footer>

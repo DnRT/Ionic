@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Platzi Music Test</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-slides pager="true">
+    <ion-slide *ngFor="let s of slides">
+      <ion-icon name="close" (click)="endIntro()"></ion-icon>
+      <img src="assets\img\logo.png">
+      <h3>{{ s.title }}</h3>
+      <p>{{ s.description }}</p>
+      <ion-icon name="{{ s.icon }}"></ion-icon>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
