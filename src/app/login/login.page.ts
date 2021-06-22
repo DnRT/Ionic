@@ -51,11 +51,13 @@ export class LoginPage implements OnInit {
     this.authService.logIn(form).then(res=>{
       if(res==='LOG IN SUCCESSFUL'){
         this.storage.set("isUserLoggedIn", true);
-        this.navCtrl.navigateForward("/home");
+        this.navCtrl.navigateForward("/menu/home");
       }
     }).catch(err=>{
       this.errorMessage=err;
     });
   }
-
+  goRegister(){
+    this.navCtrl.navigateForward("/register");
+  }
 }

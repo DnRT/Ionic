@@ -35,11 +35,11 @@
     {{ errorMessage }}
     <ion-button expand="full" shape="round" color="success"
       [disabled]="!loginFrom.valid"
-      type="submit"
-    >
+      type="submit">
       Send</ion-button>
     </div>
   </form>
 </ion-content>
 <ion-footer>
+  <ion-button expand="full" shape="round" color="success" (click)="goRegister()">Register</ion-button>
 </ion-footer>
