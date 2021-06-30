@@ -45,9 +45,10 @@ export class HomePage implements OnInit {
   }
   artistInitial(){
     this.musicService.fetchAPI().then(resp =>{
-      this.artistas=this.musicService.returnJSON();
+      //this.artistas=this.musicService.returnJSON();
       this.SONGS=resp.albums.items.filter(r=> r.album_type==="single");
       this.albums=resp.albums.items.filter(r=> r.album_type==='album');
+      //console.log(resp);
     });
   }
   printOut(){
