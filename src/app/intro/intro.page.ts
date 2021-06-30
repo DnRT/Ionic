@@ -41,7 +41,7 @@ export class IntroPage implements OnInit {
   async endIntro(){
     await this.storage.create();
     this.storage.set("IntroShowed",true);
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/menu/home');
   }
 
 }
